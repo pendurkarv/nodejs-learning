@@ -1,0 +1,17 @@
+<html>
+  <head>
+    <title>Profile page</title>
+  </head>
+  <body>
+    <% include partials/nav.ejs %>
+    <h1>Yout name is <%= name %></h1>
+    <p>
+      I am <%= data.age %> years old <%= data.job %>.
+      <ul>
+      <% data.hobbies.forEach(function(item){ %>
+        <li><%= item %></li>
+      <% }); %>
+      </ul>
+    </p>
+  </body>
+</html>

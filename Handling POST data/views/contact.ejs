@@ -1,0 +1,22 @@
+<html>
+  <head>
+    <title>Contact page</title>
+  </head>
+  <body>
+    <% include partials/nav.ejs %>
+    <h1>This is contact page</h1>
+
+    <form id="contact-form" method="POST">
+      <label for="first_name">Your first name</label>
+      <input type="text" name="first_name" value="<%= query.first_name %>" />
+
+      <label for="last_name">Your last name</label>
+      <input type="text" name="last_name" value="<%= query.last_name %>" />
+
+      <label for="profession">Your profession</label>
+      <input type="text" name="profession" value="<%= query.profession %>" >
+
+      <input type="submit" name="submit">
+    </form>
+  </body>
+</html>
