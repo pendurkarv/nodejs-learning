@@ -8,13 +8,13 @@
 
     <form id="contact-form" type="GET">
       <label for="first_name">Your first name</label>
-      <input type="text" name="first_name" value="<% query.first_name %>" />
+      <input type="text" name="first_name" value="<%= query.first_name %>" />
 
       <label for="last_name">Your last name</label>
-      <input type="text" name="last_name" value="<% query.last_name %>" />
+      <input type="text" name="last_name" value="<%= query.last_name %>" />
 
       <label for="profession">Your profession</label>
-      <input type="text" name="profession" value="<% query.profession %>" >
+      <input type="text" name="profession" value="<%= query.profession %>" >
 
       <input type="submit" name="submit">
     </form>
