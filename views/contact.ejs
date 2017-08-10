@@ -1,0 +1,18 @@
+<html>
+  <head>
+    <title>Contact us</title>
+    <link type="text/css" href="/assets/style.css" rel="stylesheet" />
+  </head>
+  <body>
+    <h1>This is contact page.</h1>
+    <form name="form-contact" id="form-contact" method="post" >
+      <label for="first_name">First Name</label>
+      <input type="text" name="first_name" id="txt_first_name" value="<%= query.first_name %>" />
+
+      <label for="last_name">Last Name</label>
+      <input type="text" name="last_name" id="txt_last_name" value="<%= query.last_name %>" />
+
+      <input type="submit" name="submit" id="btn_submit" value="Submit" />
+    </form>
+  </body>
+</html>

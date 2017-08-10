@@ -1,0 +1,25 @@
+{
+  "name": "nodejs-learning",
+  "version": "1.0.0",
+  "description": "Learning Node JS coding",
+  "main": "app.js",
+  "dependencies": {
+    "body-parser": "^1.17.2",
+    "ejs": "^2.5.7",
+    "express": "^4.15.4"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/pendurkarv/nodejs-learning.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/pendurkarv/nodejs-learning/issues"
+  },
+  "homepage": "https://github.com/pendurkarv/nodejs-learning#readme"
+}
