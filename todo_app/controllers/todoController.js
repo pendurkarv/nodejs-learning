@@ -1,33 +1,35 @@
 const bodyParser = require('body-parser');
+const mongoose = require('mongoose');
 
+//Connnect to database
+mongoose.connect('mongodb://todo_user:todo123@ds153835.mlab.com:53835/mytodo');
+//Create a schema
+var todoSchema = new mongoose.Schema({item: String});
+var todo = mongoose.model('todo', todoSchema);
 var urlencodedParser = bodyParser.urlencoded({extended: false});
-var data = [
-  {item: 'get milk'},
-  {item: 'clean room'},
-  {item: 'write some code'}
-];
 
 module.exports = function(app) {
-
   //Handle get request to list to-do items
   app.get('/todo', function(req, res){
-    res.render('todo', {todos: data});
+    todo.find({}, function(err, data){
+      if(err) throw err;
+      res.render('todo', {todos: data});
+    });
   });
 
   //Handle post request to add new item in to-do list
   app.post('/todo', urlencodedParser, function(req, res){
-    data.push(req.body);
-    res.json(data);
+    var newTodo = todo(req.body).save(function(err, data){
+      if(err) throw err;
+      res.json(data);
+    });
   });
 
   //Handle delete request to delete exising to-do item
   app.delete('/todo/:item', function(req, res){
-    data = data.filter(function(todo){
-      //Remove item in to-do list if matched with item in delete request
-      return todo.item.replace(/ /g, '-') !== req.params.item;
+    todo.find({item: req.params.item.replace(/\-/g, " ")}).remove(function(err, data){
+      if(err) throw err;
+      res.json(data);
     });
-
-    res.json(data);
   });
-
 }
